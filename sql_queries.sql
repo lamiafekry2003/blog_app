@@ -1,0 +1,28 @@
+-- create tables
+-- users table
+CREATE Table if NOT EXISTS users (
+   id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   first_name VARCHAR(255) NOT NULL,
+   middle_name VARCHAR(255),
+   last_name VARCHAR(255) NOT NULL,
+   email VARCHAR(255) NOT NULL UNIQUE,
+   password VARCHAR(255) NOT NULL,
+   DOB DATE,
+   gender ENUM('male', 'female') DEFAULT'male',
+   confirm_email BOOLEAN DEFAULT FALSE,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   deleted_at TIMESTAMP NULL DEFAULT NULL
+);
+-- ----------------------------------------------
+-- blog table
+CREATE TABLE if NOT EXISTS blogs(
+   id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   title VARCHAR(255) NOT NULL,
+   content LONGTEXT NOT NULL,
+   user_id INT(11) NOT NULL,
+   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   deleted_at TIMESTAMP NULL DEFAULT NULL
+)
