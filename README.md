@@ -31,6 +31,17 @@ A simple RESTful Blog API built using **Node.js**, **Express**, and **MySQL**, d
 - **MySQL**
 - **phpMyAdmin**
 - **Postman**
+<!-- some example -->
+
+[ERD](./assests/Erdandmapp.PNG)
+<!-- one from auth -->
+[Signup](./assests/auth1.PNG)
+<!-- one from blog -->
+[Blog](./assests/blog1.PNG)
+<!-- one from user -->
+[user](./assests/user1.PNG)
+<!-- Postman Collection -->
+[postman](./postman.js/blog_app.postman_collection.json)
 
 
 
